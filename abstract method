@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package code;
+
+/**
+ *
+ * @author tanya
+ */
+ abstract class Parent2{
+    public Parent2(){
+        System.out.println("constructor ");
+    }
+    public void hello()
+    {
+        System.out.println("hello");
+    }
+    abstract public void greet();
+}
+class Child2 extends Parent2{
+    @Override
+    public void greet()
+    {
+        System.out.println("gm");
+    }
+}
+//without overriding
+abstract class Child3 extends Parent2{
+    public void th(){
+        System.out.println("I am good"); 
+    } 
+}
+public class Code {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Child2 obj= new Child2();
+        obj.hello();
+    }
+    
+}
