@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isSubset(vector<int>& arr1, vector<int>& arr2)
+{
+
+    // Sort both arrays
+    sort(arr1.begin(), arr1.end());
+    sort(arr2.begin(), arr2.end());
+
+    int i = 0, j = 0;
+
+    // Traverse both arrays using two pointers
+    while (i < arr1.size() && j < arr2.size()) {
+        if (arr1[i] < arr2[j]) {
+            i++;
+        }
+        else if (arr1[i] == arr2[j]) {
+            i++;
+            j++;
+        }
+        else {
+            // If element in arr2 is not found in arr1
+            return false;
+        }
+    }
+
+    // If we have traversed all elements in arr2, it is a
+    // subset
+    return (j == arr2.size());
+}
+
+int main()
+{
+    vector<int> arr1 = { 11, 1, 13, 21, 3, 7 };
+    vector<int> arr2 = { 11, 3, 7, 1 };
+
+    if (isSubset(arr1, arr2)) {
+        cout << "Yes" << endl;
+    }
+    else {
+        cout << "No" << endl;
+    }
+
+    return 0;
+}
